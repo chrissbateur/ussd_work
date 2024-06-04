@@ -18,7 +18,7 @@ app.post('/ussd', (req, res) => {
         serviceCode,
         phoneNumber,
         text,
-        addMoney,
+        
     } = req.body;
 
     let response = '';
@@ -45,8 +45,18 @@ app.post('/ussd', (req, res) => {
     }
     else if (text == '1*2') {
         // This is to read a balance
-        finalbalance = '500,000 Rwf';
+        finalBalance = totalBalance;
         response = `END Ubu Ufite amafaranga : ${finalBalance}`;
+    }
+    else if (text == '1*3') {
+        response = `CON onger amafaranga kuri konti`;
+        currentBalance = 30000;
+        addBalance;
+        totalBalance = currentBalance + addBalance;
+        response = `END amafaranga musigaranye ni ${totalBalance}`;
+        
+        
+        
     }
 
     // Send the response back to the API
