@@ -32,7 +32,8 @@ app.post('/ussd', (req, res) => {
         // Business logic for first level response
         response = `CON Hitamo konti 
         1. Nimero ya konti
-        2. Kureba amafaranga asigaye`;
+        2. Kureba amafaranga asigaye
+        3. Ongera Amafaranga kuri konti`;
     } else if ( text == '2') {
         // Business logic for first level response
         // This is a terminal request. Note how we start the response with END
