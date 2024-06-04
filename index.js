@@ -46,9 +46,8 @@ app.post('/ussd', (req, res) => {
     }
      else if (text == 1*2) {
          
-         response = `CON Ufite amafaranga : ${currentBalance}`;
-         currentBalance = 300000;
-         addMoney = '';
+         response = `CON umubare w'amafaranga.${addMoney}`;
+         currentBalance = 300;
          
          
      }
