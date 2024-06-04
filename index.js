@@ -31,7 +31,8 @@ app.post('/ussd', (req, res) => {
         // Business logic for first level response
         response = `CON Hitamo konti 
         1. Nimero ya konti
-        2. Kureba asigayeho`;
+        2. Kongera amafaranga kuri konti
+        3. Kureba amafaranga asigaye`;
     } else if ( text == '2') {
         // Business logic for first level response
         // This is a terminal request. Note how we start the response with END
@@ -42,10 +43,18 @@ app.post('/ussd', (req, res) => {
         // This is a terminal request. Note how we start the response with END
         response = `END Nimero ya konti yawe ni: ${accountNumber}`;
     }
-    else if (text == '1*2') {
-        // This is tor ead a balance
-        balance = '500,000';
-        response = `END Ufite amafaranga : ${balance}`;
+     else if (text == 1*2) {
+         currentBalance = 300000;
+         response = `CON Ufite amafaranga : ${currentBalance}`;
+         
+         addMoney = '';
+         
+         
+     }
+    else if (text == '1*3') {
+        // This is to read a balance
+        finalbalance = currentBalance + addMoney;
+        response = `END Ubu Ufite amafaranga : ${finalBalance}`;
     }
 
     // Send the response back to the API
