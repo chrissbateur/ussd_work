@@ -18,6 +18,7 @@ app.post('/ussd', (req, res) => {
         serviceCode,
         phoneNumber,
         text,
+        addMoney,
     } = req.body;
 
     let response = '';
@@ -44,9 +45,9 @@ app.post('/ussd', (req, res) => {
         response = `END Nimero ya konti yawe ni: ${accountNumber}`;
     }
      else if (text == 1*2) {
-         currentBalance = 300000;
-         response = `CON Ufite amafaranga : ${currentBalance}`;
          
+         response = `CON Ufite amafaranga : ${currentBalance}`;
+         currentBalance = 300000;
          addMoney = '';
          
          
