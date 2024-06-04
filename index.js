@@ -42,6 +42,11 @@ app.post('/ussd', (req, res) => {
         // This is a terminal request. Note how we start the response with END
         response = `END Nimero ya konti yawe ni: ${accountNumber}`;
     }
+    else if (text == '1*2') {
+        // This is tor ead a balance
+        balance = '500,000';
+        response = `END Ufite amafaranga : ${balance}`;
+    }
 
     // Send the response back to the API
     res.set('Content-Type: text/plain');
