@@ -46,19 +46,10 @@ app.post('/ussd', (req, res) => {
     }
     else if (text == '1*2') {
         // This is to read a balance
-        finalBalance = totalBalance;
+        finalBalance = 500000;
         response = `END Ubu Ufite amafaranga : ${finalBalance}`;
     }
-    else if (text == '1*3') {
-        response = `CON onger amafaranga kuri konti`;
-        currentBalance = 30000;
-        addBalance;
-        totalBalance = currentBalance + addBalance;
-        response = `END amafaranga musigaranye ni ${totalBalance}`;
-        
-        
-        
-    }
+   
 
     // Send the response back to the API
     res.set('Content-Type: text/plain');
