@@ -24,22 +24,23 @@ app.post('/ussd', (req, res) => {
 
     if (text == '') {
         // This is the first request. Note how we start the response with CON
-        response = `CON What would you like to check
-        1. My account
-        2. My phone number`;
+        response = `CON Ikaze kuri USSD Hafi yawe
+        1. Konti Yanjye
+        2. Nimero yanjye ibaruyeho`;
     } else if ( text == '1') {
         // Business logic for first level response
-        response = `CON Choose account information you want to view
-        1. Account number`;
+        response = `CON Hitamo konti 
+        1. Nimero ya konti
+        2. Kureba asigayeho`;
     } else if ( text == '2') {
         // Business logic for first level response
         // This is a terminal request. Note how we start the response with END
-        response = `END Your phone number is ${phoneNumber}`;
+        response = `END Telephone yawe ni: ${phoneNumber}`;
     } else if ( text == '1*1') {
         // This is a second level response where the user selected 1 in the first instance
         const accountNumber = 'ACC100101';
         // This is a terminal request. Note how we start the response with END
-        response = `END Your account number is ${accountNumber}`;
+        response = `END Nimero ya konti yawe ni: ${accountNumber}`;
     }
 
     // Send the response back to the API
